@@ -1,0 +1,399 @@
+<!--Main Navigation-->
+<div class="">
+  <section class="py-11 border-bottom border-white border-5">
+    <div
+      class="bg-holder overlay overlay-light"
+      style="
+        background-image: url(assets/img/bn.avif);
+        background-size: cover;
+        object-fit: cover;
+      "
+    ></div>
+    <!--/.bg-holder-->
+    <div class="container">
+      <div class="row flex-center">
+        <div class="col-12 mb-10">
+          <div class="d-flex align-items-center flex-column">
+            <h1 class="fw-bold fs-lg-4">Sản phẩm của chúng tôi</h1>
+            <h1 class="" style="font-size: 18px; font-style: italic">
+              Đem đến một trải nghiệm mua hàng tốt nhất
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- sidebar + content -->
+<section class="">
+  <div class="container">
+    <div class="row">
+      <!-- sidebar -->
+      <div class="col-lg-3">
+        <!-- Toggle button -->
+        <button
+          class="btn btn-outline-secondary mb-3 w-100 d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent1"
+          aria-controls="navbarSupportedContent1"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span>Show filter</span>
+        </button>
+        <!-- Collapsible wrapper -->
+        <div
+          class="collapse card d-lg-block mb-5"
+          id="navbarSupportedContent1"
+          style="border: none"
+        >
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item" style="border: none">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button text-dark bg-light"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#panelsStayOpen-collapseOne"
+                  aria-expanded="true"
+                  aria-controls="panelsStayOpen-collapseOne"
+                  style="
+                    background-color: white !important;
+                    border-bottom: 1px solid #ccc;
+                  "
+                >
+                  Categories
+                </button>
+              </h2>
+              <div
+                id="panelsStayOpen-collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+              >
+                <div class="accordion-body" style="padding: 0">
+                  <ul class="list-unstyled" style="margin-left: 20px">
+                    <li>
+                      <a
+                        style="
+                          font-size: 16px;
+                          padding: 15px 8px;
+                          border-bottom: 1px solid #ccc;
+                          color: #6e757c !important;
+                        "
+                        [routerLink]="['/products']"
+                        [queryParams]="{ page: 1 }"
+                        class="active d-block text-dark text-decoration-none"
+                        >All
+                      </a>
+                    </li>
+
+                    <li *ngFor="let item of categories">
+                      <a
+                        style="
+                          font-size: 16px;
+                          padding: 15px 8px;
+                          border-bottom: 1px solid #ccc;
+                          color: #6e757c !important;
+                        "
+                        [routerLink]="['/products']"
+                        [queryParams]="{ cate: item?.name }"
+                        class="active d-block text-dark text-decoration-none"
+                        >{{ item?.name }}
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar -->
+      <!-- content -->
+      <div class="col-lg-9">
+        <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
+          <strong class="d-block py-2">{{ datas.length }} Items found </strong>
+          <!-- input -->
+
+          <div class="ms-auto d-flex gap-2 align-items-center">
+            <div class="d-flex">
+              <input
+                class="border"
+                type="text"
+                name="search"
+                autocomplete="off"
+                placeholder="Search"
+                (keyup)="searchFunction()"
+                style="
+                  padding: 7px 6px 7px 10px;
+                  border-radius: 5px;
+                  outline: none;
+                "
+              />
+            </div>
+            <!-- <select class="form-select d-inline-block w-auto border pt-1">
+              <option value="0">Best match</option>
+              <option value="1">Recommended</option>
+              <option value="2">High rated</option>
+              <option value="3">Randomly</option>
+            </select> -->
+            <div class="btn-group shadow-0 border">
+              <a
+                class="btn btn-light"
+                style="border: none"
+                [class.active]="typeList"
+                (click)="changeListColumn()"
+                title="List view"
+              >
+                <i class="fa fa-bars fa-lg"></i>
+              </a>
+              <a
+                class="btn btn-light"
+                style="border: none"
+                [class.active]="!typeList"
+                (click)="changeListRow()"
+                title="Grid view"
+              >
+                <i class="fa fa-th fa-lg"></i>
+              </a>
+            </div>
+          </div>
+        </header>
+        <div *ngIf="typeList">
+          <div
+            *ngFor="let item of datas"
+            class="row justify-content-center mb-3"
+          >
+            <div class="col-md-12">
+              <div class="card shadow-0 border rounded-3">
+                <div class="card-body">
+                  <div class="row g-0">
+                    <div
+                      class="col-xl-3 col-md-4 d-flex justify-content-center"
+                    >
+                      <div
+                        class="bg-image hover-zoom ripple rounded ripple-surface me-md-3 mb-3 mb-md-0"
+                      >
+                        <img
+                          style="cursor: pointer"
+                          [routerLink]="'/products/' + item?._id"
+                          [src]="item?.img"
+                          class="w-100"
+                        />
+                        <a href="#!">
+                          <div class="hover-overlay">
+                            <div
+                              class="mask"
+                              style="
+                                background-color: rgba(253, 253, 253, 0.15);
+                              "
+                            ></div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-xl-6 col-md-5 col-sm-7">
+                      <h5
+                        style="
+                          margin-bottom: 0;
+                          font-size: 13px;
+                          font-style: italic;
+                          color: #6e757c;
+                          cursor: pointer;
+                        "
+                        [routerLink]="'/products/' + item?._id"
+                      >
+                        {{ item?.categoryId?.name }}
+                      </h5>
+                      <h2
+                        style="
+                          padding: 0;
+                          margin: 0;
+                          width: 400px;
+                          white-space: nowrap;
+                          overflow: hidden;
+                          text-overflow: ellipsis;
+                          font-size: 20px;
+                        "
+                      >
+                        {{ item?.name }}
+                      </h2>
+                      <div class="d-flex flex-row">
+                        <div class="text-warning mb-1 me-2">
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fas fa-star-half-alt"></i>
+                        </div>
+                      </div>
+
+                      <p class="text mb-4 mb-md-0">
+                        {{
+                          item?.description.length > 180
+                            ? item?.description.slice(0, 180) + "..."
+                            : item?.description
+                        }}
+                      </p>
+                    </div>
+                    <div class="col-xl-3 col-md-3 col-sm-5">
+                      <div class="d-flex align-items-center gap-2">
+                        <h2
+                          class="price"
+                          style="margin: 0; color: #ed1d24; font-size: 20px"
+                        >
+                          {{ item?.price }} đ
+                        </h2>
+                        <del *ngIf="item?.discount > 0" style="color: #ccc"
+                          >{{
+                            (item?.price * (item?.discount / 100)).toFixed(2)
+                          }}
+                          đ</del
+                        >
+                      </div>
+                      <h6 class="text-success">Free shipping</h6>
+                      <div class="mt-4 d-flex">
+                        <button
+                          class="btn btn-primary shadow-0"
+                          [routerLink]="'/products/' + item?._id"
+                          style="margin-right: 10px"
+                          type="button"
+                        >
+                          Buy this
+                        </button>
+                        <a
+                          href="#!"
+                          class="btn btn-light border px-2 pt-2 icon-hover"
+                          ><i class="fas fa-heart fa-lg px-1"></i
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="!typeList">
+          <div class="row">
+            <div *ngFor="let item of datas" class="col-md-3 col-sm-6 mb-3">
+              <div
+                class="product-grid"
+                style="border-radius: 5px; overflow: hidden"
+              >
+                <div class="product-image">
+                  <a [routerLink]="'/products/' + item?._id" class="image">
+                    <img
+                      [routerLink]="'/products/' + item?._id"
+                      class="pic-1"
+                      [src]="item?.img"
+                    />
+                    <img
+                      [routerLink]="'/products/' + item?._id"
+                      class="pic-2"
+                      [src]="item.imgs[1] || item.imgs[0]"
+                    />
+                  </a>
+                  <ul class="product-links">
+                    <li>
+                      <a [routerLink]="'/products/' + item?._id"
+                        ><i class="fa fa-shopping-cart"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a [routerLink]="'/products/' + item?._id"
+                        ><i class="far fa-heart"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a [routerLink]="'/products/' + item?._id"
+                        ><i class="fa fa-random"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a [routerLink]="'/products/' + item?._id"
+                        ><i class="fa fa-search"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product-content">
+                  <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="far fa-star"></li>
+                    <li class="far fa-star"></li>
+                  </ul>
+                  <h3
+                    style="
+                      width: 200px;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    "
+                    class="title"
+                  >
+                    <a
+                      style="text-decoration: none"
+                      [routerLink]="'/products/' + item?._id"
+                      >{{ item?.name }}</a
+                    >
+                  </h3>
+                  <div class="d-flex align-items-center gap-2">
+                    <h2 class="price" style="margin: 0">{{ item?.price }} đ</h2>
+                    <del *ngIf="item?.discount > 0" style="color: #ccc"
+                      >{{
+                        (item?.price * (item?.discount / 100)).toFixed(2)
+                      }}
+                      đ</del
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Pagination -->
+        <nav
+          aria-label="Page navigation example"
+          class="d-flex justify-content-center mt-3"
+        >
+          <ul class="pagination">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li
+              *ngFor="let page of totalPages"
+              class="page-item"
+              routerLink="/products"
+              [queryParams]="{ page: page }"
+            >
+              <a class="page-link" routerLink="/products">{{ page }}</a>
+            </li>
+            <li class="page-item">
+              <a
+                (click)="nextPage()"
+                class="page-link"
+                routerLink="/products"
+                [queryParams]="{ page: currentPage }"
+                aria-label="Next"
+              >
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Pagination -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+<!-- Footer -->

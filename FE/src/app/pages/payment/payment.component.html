@@ -1,0 +1,61 @@
+<div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col">
+            <div class="card my-4 shadow-3 custom-card mx-auto">
+                <div class="row g-0">
+                    <div class="">
+                        <div class="card-body p-md-5 text-black">
+                            <h3 class="mb-4 text-uppercase">Phương thức thanh toán</h3>
+
+                            <hr class="mb-4">
+                            <div class="d-block my-3">
+                                <div class="custom-control custom-radio">
+                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input"
+                                        checked="" required="">
+                                    <label class="custom-control-label" for="credit">Thẻ ngân hàng</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input"
+                                        required="">
+                                    <label class="custom-control-label" for="debit">Thẻ ghi nợ</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input"
+                                        required="">
+                                    <label class="custom-control-label" for="paypal">Thanh toán khi nhận hàng</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-name">Tên chủ thẻ</label>
+                                    <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cc-number">Số thẻ tín dụng</label>
+                                    <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-expiration">Hết hạn</label>
+                                    <input type="text" class="form-control" id="cc-expiration" placeholder=""
+                                        required="">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="cc-cvv">Mã CVV</label>
+                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+
+                            <div class="d-flex justify-content-end pt-3">
+                                <a href="/payment" class="btn btn-success btn-lg ms-2"
+                                    style="background-color: hsl(210, 100%, 50%)">Đặt hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

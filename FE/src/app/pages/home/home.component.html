@@ -1,0 +1,380 @@
+<div class="">
+  <section class="py-11 bg-light-gradient border-bottom border-white border-5">
+    <div
+      class="bg-holder overlay overlay-light"
+      style="
+        background-image: url(assets/img/header-bg.jpg);
+        background-size: cover;
+      "
+    ></div>
+    <!--/.bg-holder-->
+    <div class="container">
+      <div class="row flex-center">
+        <div class="col-12 mb-10">
+          <div class="d-flex align-items-center flex-column">
+            <h1 class="fw-normal">
+              Đọc sách là nghệ thuật, người đọc là nghệ nhân
+            </h1>
+            <h1 class="fs-4 fs-lg-8 fs-md-6 fw-bold">
+              The more that you read, the more things you will know.
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- <section> begin ============================-->
+<section class="py-0" id="header" style="margin-top: -23rem !important">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <div class="card card-span h-100 text-white">
+          <img
+            class=""
+            src="assets/img/her.jpg"
+            width="646"
+            height="375"
+            alt="..."
+          />
+          <div class="card-img-overlay d-flex flex-center"></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-span h-100 text-white">
+          <img
+            class=""
+            src="assets/img/him.jpg"
+            width="646"
+            height="375"
+            alt="..."
+          />
+          <div class="card-img-overlay d-flex flex-center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of .container-->
+</section>
+<!-- <section> close ============================-->
+
+<!-- <section> begin ============================-->
+<section class="py-0">
+  <div class="container">
+    <div class="row h-100">
+      <div class="col-lg-7 mx-auto text-center mt-7 mb-5">
+        <h5 class="fw-bold fs-3 fs-lg-5 lh-sm">Sản phẩm nổi bật</h5>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6" *ngFor="let item of pricehigh">
+          <div
+            class="product-grid"
+            style="border-radius: 5px; overflow: hidden"
+          >
+            <div class="product-image">
+              <a [routerLink]="'/products/' + item?._id" class="image">
+                <img class="pic-1" [src]="item.img" />
+                <img class="pic-2" [src]="item.imgs[1] || item.img" />
+              </a>
+              <ul class="product-links">
+                <li>
+                  <a [routerLink]="'/products/' + item?._id"
+                    ><i class="fa fa-shopping-cart"></i
+                  ></a>
+                </li>
+                <li>
+                  <a [routerLink]="'/products/' + item?._id"
+                    ><i class="far fa-heart"></i
+                  ></a>
+                </li>
+                <li>
+                  <a [routerLink]="'/products/' + item?._id"
+                    ><i class="fa fa-random"></i
+                  ></a>
+                </li>
+                <li>
+                  <a [routerLink]="'/products/' + item?._id"
+                    ><i class="fa fa-search"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <div class="product-content">
+              <ul class="rating">
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="fa fa-star"></li>
+                <li class="far fa-star"></li>
+                <li class="far fa-star"></li>
+              </ul>
+              <h3 class="title">
+                <a
+                  class="text-decoration-none"
+                  [routerLink]="'/products/' + item?._id"
+                  >{{ item.name }}</a
+                >
+              </h3>
+              <div class="price">{{ item.price }} đ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of .container-->
+</section>
+<!-- <section> close ============================-->
+
+<!-- <section> begin ============================-->
+<section>
+  <div class="container">
+    <div class="row h-100 g-0">
+      <div class="col-md-6">
+        <div class="bg-300 p-4 h-100 d-flex flex-column justify-content-center">
+          <h4 class="text-800">Voltaire đã từng viết:</h4>
+          <p class="mb-5 fs-5">
+            Những gì sách dạy chúng ta cũng giống như lửa. Chúng ta lấy nó từ
+            nhà hàng xóm, thắp nó trong nhà ta, đem nó truyền cho người khác và
+            nó trở thành tài sản của tất cả mọi người.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div routerLink="/products" class="card card-span h-100 text-white">
+          <img class="card-img h-100" src="assets/img/rb.jpg" alt="..." />
+          <div class="card-img-overlay bg-dark-gradient">
+            <div class="d-flex align-items-end justify-content-center h-100">
+              <a class="btn btn-lg text-light fs-4" href="" role="button"
+                >Shopping<svg
+                  class="bi bi-arrow-right-short"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="23"
+                  height="23"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+                  ></path></svg
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of .container-->
+</section>
+<!-- <section> close ============================-->
+
+<!-- <section> begin ============================-->
+<section class="py-0" style="margin-top: 120px" id="collection">
+  <div class="container">
+    <div class="row h-100 gx-2">
+      <div class="col-md-6" routerLink="/products">
+        <div class="card card-span h-100 text-white">
+          <img class="card-img h-100" src="assets/img/gs.png" alt="..." />
+          <div class="card-img-overlay bg-dark-gradient">
+            <div class="p-5 p-md-2 p-xl-5">
+              <h1 class="fs-md-4 fs-lg-7 text-light">Hơn 1000 đầu sách</h1>
+              <h5 class="fs-2 text-light">đa dạng và phong phú</h5>
+            </div>
+          </div>
+          <a class="stretched-link" href=""></a>
+        </div>
+      </div>
+      <div class="col-md-6" routerLink="/products">
+        <div class="card card-span h-100 text-white">
+          <img class="card-img h-100" src="assets/img/vpp.jpg" alt="..." />
+          <div class="card-img-overlay bg-dark-gradient">
+            <div
+              class="p-5 p-md-2 p-xl-5 d-flex flex-column flex-end-center align-items-baseline h-100"
+            >
+              <h1 class="fs-md-4 fs-lg-7 text-light">
+                Cùng với nhiều vật dụng
+              </h1>
+              <h5 class="fs-2 text-light">đơn giản và tiện lợi</h5>
+            </div>
+          </div>
+          <a class="stretched-link" href=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of .container-->
+</section>
+<!-- <section> close ============================-->
+
+<section>
+  <div class="container">
+    <div class="row h-100">
+      <div class="col-lg-7 mx-auto text-center mb-6">
+        <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">New product</h5>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-md-3 col-sm-6" *ngFor="let items of newProduct">
+            <div
+              class="product-grid"
+              style="border-radius: 5px; overflow: hidden"
+            >
+              <div class="product-image">
+                <a [routerLink]="'/products/' + items._id" class="image">
+                  <img class="pic-1" [src]="items.img" />
+                  <img class="pic-2" [src]="items.imgs[1] || items.img" />
+                </a>
+                <ul class="product-links">
+                  <li>
+                    <a [routerLink]="'/products/' + items._id"
+                      ><i class="fa fa-shopping-cart"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a [routerLink]="'/products/' + items._id"
+                      ><i class="far fa-heart"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a [routerLink]="'/products/' + items._id"
+                      ><i class="fa fa-random"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a [routerLink]="'/products/' + items._id"
+                      ><i class="fa fa-search"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content">
+                <ul class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="far fa-star"></li>
+                  <li class="far fa-star"></li>
+                </ul>
+                <h3 class="title">
+                  <a
+                    class="text-decoration-none"
+                    [routerLink]="'/products/' + items._id"
+                    >{{ items.name }}</a
+                  >
+                </h3>
+                <div class="price">{{ items.price }} đ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section> begin ============================-->
+<section class="py-0" id="outlet">
+  <div class="container">
+    <div class="row h-100 g-0">
+      <div class="col-md-6" routerLink="/products">
+        <div class="card card-span h-100 text-white">
+          <img class="card-img h-100" src="assets/img/stv.jpg" alt="..." />
+          <div class="card-img-overlay bg-dark-gradient rounded-0">
+            <div
+              class="p-5 p-md-2 p-xl-5 d-flex flex-column flex-end-center align-items-baseline h-100"
+            >
+              <h1 class="fs-md-4 fs-lg-7 text-light">Sách tiếng việt</h1>
+            </div>
+          </div>
+          <a class="stretched-link" href=""></a>
+        </div>
+      </div>
+      <div class="col-md-6 h-100">
+        <div class="row h-100 g-0">
+          <div class="col-md-6 h-100" routerLink="/products">
+            <div class="card card-span h-100 text-white">
+              <img class="card-img h-100" src="assets/img/but.png" alt="..." />
+              <div class="card-img-overlay bg-dark-gradient rounded-0">
+                <div class="p-5 p-xl-5 p-md-0">
+                  <h3 class="text-light">Dụng cụ học tập</h3>
+                </div>
+              </div>
+              <a class="stretched-link" href=""></a>
+            </div>
+          </div>
+          <div class="col-md-6" routerLink="/products">
+            <div class="card card-span h-100 text-white">
+              <img
+                class="card-img h-100"
+                src="assets/img/sotay.jpg"
+                alt="..."
+              />
+              <div class="card-img-overlay bg-dark-gradient rounded-0">
+                <div class="p-5 p-xl-5 p-md-0">
+                  <h3 class="text-light">Sổ tay</h3>
+                </div>
+              </div>
+              <a class="stretched-link" href=""></a>
+            </div>
+          </div>
+          <div class="col-md-6" routerLink="/products">
+            <div class="card card-span h-100 text-white">
+              <img class="card-img h-100" src="assets/img/sta.png" alt="..." />
+              <div class="card-img-overlay bg-dark-gradient rounded-0">
+                <div class="p-5 p-xl-5 p-md-0">
+                  <h3 class="text-light">Sách tiếng anh</h3>
+                </div>
+              </div>
+              <a class="stretched-link" href=""></a>
+            </div>
+          </div>
+          <div class="col-md-6" routerLink="/products">
+            <div class="card card-span h-100 text-white">
+              <img class="card-img h-100" src="assets/img/qua.png" alt="..." />
+              <div class="card-img-overlay bg-dark-gradient rounded-0">
+                <div class="p-5 p-xl-5 p-md-0">
+                  <h3 class="text-light">Quà lưu niệm</h3>
+                </div>
+              </div>
+              <a class="stretched-link" href=""> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of .container-->
+</section>
+<!-- <section> close ============================-->
+
+<!-- <section> begin ============================-->
+<section>
+  <div class="container">
+    <div class="row h-100 g-0">
+      <div class="col-md-6">
+        <div class="bg-300 p-4 h-100 d-flex flex-column justify-content-center">
+          <!-- <h1 class="fw-semi-bold lh-sm fs-4 fs-lg-5 fs-xl-6">Gentle Formal Looks </h1> -->
+          <p class="mb-5 fs-5">
+            Đằng sau sự thành công của một người đàn ông, là hình dáng của một
+            người phụ nữ. Còn đằng sau sự thành công của bất kì ai là ít nhất
+            một cuốn sách, hay cả một giá sách.
+          </p>
+          <!-- <div class="d-grid gap-2 d-md-block"><a class="btn btn-lg btn-dark" href="" role="button">Explore
+                            Collection</a>
+                    </div> -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-span h-100 text-white">
+          <img class="card-img h-100" src="assets/img/rb2.jpg" alt="..." /><a
+            class="stretched-link"
+            href=""
+          ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of .container-->
+</section>
+<!-- <section> close ============================-->
